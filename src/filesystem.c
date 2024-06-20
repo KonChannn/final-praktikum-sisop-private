@@ -70,7 +70,7 @@ void fsWrite(struct file_metadata* metadata, enum fs_return* status) {
   // 1. Read the filesystem from disk to memory.
   readSector(&data_fs_buf, FS_DATA_SECTOR_NUMBER);
   readSector(&(node_fs_buf.nodes[0]), FS_NODE_SECTOR_NUMBER);
-  readSector(&node_fs_buf, FS_NODE_SECTOR_NUMBER);
+  readSector(&(node_fs_buf.nodes[32]), FS_NODE_SECTOR_NUMBER);
 
 
   // 2. Iterate through each node item to find a node that has a name equal to metadata->node_name and a parent index equal to metadata->parent_index. If the searched node is found, then set status with FS_R_NODE_ALREADY_EXISTS and exit.

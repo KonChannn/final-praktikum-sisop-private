@@ -47,3 +47,55 @@ void clear(byte* buf, unsigned int size) {
   unsigned int i;
   for (i = 0; i < size; i++) buf[i] = 0;
 }
+
+/* additional function I added myself*/
+
+char* strcat(char* dst, char* src)  {
+  char* ptr;
+  ptr = dst + strlen(dst);
+
+  while (*src != '\0') {
+      *ptr++ = *src++;
+  }
+
+  *ptr = '\0';
+  return dst;
+}
+
+// char* strtok(char* str, char* delim) {
+//     static char* next;
+//     char* token;
+//     char* d;
+
+//     if (str) {
+//         next = str;
+//     }
+//     if (!next) {
+//         return '\0';
+//     }
+
+//     token = next;
+//     while (*next) {
+//         d = delim;
+//         while (*d) {
+//             if (*next == *d) {
+//                 *next = '\0';
+//                 next++;
+//                 if (token != next) {
+//                     return token;
+//                 } else {
+//                     token++;
+//                     break;
+//                 }
+//             }
+//             d++;
+//         }
+//         next++;
+//     }
+//     if (*token == '\0') {
+//         return '\0';
+//     }
+//     return token;
+// }
+
+
